@@ -7,7 +7,7 @@ This document describes the structure and content of a top-level Model Metadata 
 | Field                | Type               | Description                                                                         |
 |----------------------|--------------------|-------------------------------------------------------------------------------------|
 | `model_id`           | string             | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider. |
-| `model_type`         | [Model Type]\|string | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Types](#model-types), but other values are allowed. |
+| `model_type`         | [Model Type]\|string | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type], but other values are allowed. |
 | `model_architecture` | string             | Identifies the model architecture used (e.g. RCNN, U-Net, etc.)                     |
 | `license`            | string             | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
 | `authors`            | \[[Author]\]       | **REQUIRED.** List of names and contact information for the model author(s).                 |
@@ -18,7 +18,7 @@ This document describes the structure and content of a top-level Model Metadata 
 | `runtimes`           | \[[Runtime]\]      | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences |
 | `usage_recommendations` | [Usage Recommendations] | A description of the recommended conditions under which the model can be used. |
 
-### Model Types
+### Model Type
 
 **COMING SOON**
 
@@ -45,6 +45,7 @@ This document describes the structure and content of a top-level Model Metadata 
 [License identifier]: https://spdx.org/licenses/
 [Runtime]: ../fragments/runtime
 [Training Info]: ../fragments/training
+[Model Type]: #model-type
 [Author]: #author
 [Citation]: #citation
 [Model Input]: #model-input
