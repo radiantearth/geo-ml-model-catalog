@@ -40,4 +40,4 @@ is not currently versioned, but we plan to begin versioning once we have a basic
 
 ## Contributing
 
-**COMING SOON**
+See the [Contributing guidelines](./CONTRIBUTING.md) for more information on how you can contribute to the spec.
