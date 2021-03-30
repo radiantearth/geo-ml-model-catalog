@@ -12,7 +12,9 @@ definition for ML models that operate on geospatial data.
 At a high level, this specification should provide sufficient information to enable search and discovery of geospatial 
 ML models and answer the following questions:
 
-* Is this model applicable to the geographic region I am interested in
+* Is this model applicable to my domain (e.g. land cover, agricultural monitoring, etc.)?
+* What kind of input data are required to use the model?
+* Is this model applicable to the geographic region I am interested in?
 * How well does this model perform under the kinds of conditions under which I will be using it?
 
 ## Relation to STAC
