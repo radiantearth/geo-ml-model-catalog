@@ -2,17 +2,17 @@
 
 ## Purpose
 
-The number and variety of machine learning (ML) models that utilize satellite imagery and other remotely sensed data 
-is growing rapidly. Many of these models have the potential to contribute to useful insights for the 
-global development community if they can be made more discoverable and usable by users who are not ML experts. This 
-specification aims to address these issues through a common metadata definition for ML models that operate on remotely 
-sensed data. 
+The number and variety of machine learning (ML) models that utilize geospatial data (e.g. satellite imagery, airborne 
+observations, and physical model estimates) is growing rapidly. Many of these ML models have the potential to be 
+deployed to derive useful insights for many global problems, or become benchmark baselines that empower development of 
+more accurate and complex models. For this to happen, these models should be made more discoverable and usable by ML 
+practitioners and data scientists. The GMLMC specification aims to address this goal through a common metadata 
+definition for ML models that operate on geospatial data.
 
-At a high level, this specification should provide sufficient information to answer the following questions:
+At a high level, this specification should provide sufficient information to enable search and discovery of geospatial 
+ML models and answer the following questions:
 
-* Is this model applicable to my domain (e.g. land cover, agricultural monitoring, etc.)?
-* What kind of input data are required to use the model?
-* Will this model contribute to the kinds of insights I am hoping to gain?
+* Is this model applicable to the geographic region I am interested in
 * How well does this model perform under the kinds of conditions under which I will be using it?
 
 ## Relation to STAC
