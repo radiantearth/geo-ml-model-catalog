@@ -72,11 +72,25 @@ that definition.
 
 ### Model Input
 
-**COMING SOON**
+This object describes a single model input parameter.
+
+| Field Name    | Type    | Description                                                                  |
+|---------------|---------|------------------------------------------------------------------------------|
+| `name`        | string  | **REQUIRED.** The name of the parameter.                                     |
+| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`)                |
+| `shape`       | [int]   | **REQUIRED.** The shape of the parameter as an array of integers.      |
+| `description` | string  | A human-readable description of the parameter that indicates what type of content is required. |
 
 ### Model Output
 
-**COMING SOON**
+This object describes a single model output.
+
+| Field Name    | Type    | Description                                                                  |
+|---------------|---------|------------------------------------------------------------------------------|
+| `name`        | string  | **REQUIRED.** The name of the parameter.                                     |
+| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`)                |
+| `shape`       | [int]   | **REQUIRED.** The shape of the parameter as an array of integers.      |
+| `description` | string  | A human-readable description of the parameter that indicates what type of content it contains. |
 
 ### Usage Recommendations
 
