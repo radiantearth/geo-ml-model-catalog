@@ -14,4 +14,3 @@ directory in the [`fragments`](../fragments) directory. In either case, you can 
 
 * [`model-metadata.md`](./model-metadata.md) - The detailed Model Metadata specification, including attribute 
   definitions.
-* [`schemas`](./schemas) - JSON schema documents used to validate the Model Metadata definition.
