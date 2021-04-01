@@ -9,14 +9,14 @@ This document describes the structure and content of a top-level Model Metadata 
 | `model_id`           | string             | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider. |
 | `algorithm_type`     | [Algorithm Type]\|string | **REQUIRED.** A string identifying the high-level algorithm type that the model employes. STRONGLY RECOMMENDED to use on the standard [Algorithm Type] values, but other values are allowed. |
 | `model_type`         | [Model Type]\|string | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed. |
-| `model_architecture` | string             | Identifies the model architecture used (e.g. RCNN, U-Net, etc.)                     |
+| `model_architecture` | string             | Identifies the model architecture used (e.g. RCNN, U-Net, etc.).                    |
 | `license`            | string             | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
 | `authors`            | \[[Author]\]       | **REQUIRED.** List of names and contact information for the model author(s).                 |
 | `citation`           | [Citation]         | Citation information related to the model.                                          |
 | `training`           | [Training Info]    | **REQUIRED.** A description of the data and environment used to train the model.    |
 | `inputs`             | \[[Model Input]\]  | A list of [Model Input] objects describing the names and types of model inputs.  |
-| `outputs`            | \[[Model Output]\] | A list of [Model Output] objects describing the names and types of model outputs |
-| `runtimes`           | \[[Runtime]\]      | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences |
+| `outputs`            | \[[Model Output]\] | A list of [Model Output] objects describing the names and types of model outputs. |
+| `runtimes`           | \[[Runtime]\]      | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences. |
 | `usage_recommendations` | [Usage Recommendations] | A description of the recommended conditions under which the model can be used. |
 
 ### Algorithm Type
@@ -77,7 +77,7 @@ This object describes a single model input parameter.
 | Field Name    | Type    | Description                                                                  |
 |---------------|---------|------------------------------------------------------------------------------|
 | `name`        | string  | **REQUIRED.** The name of the parameter.                                     |
-| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`)                |
+| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`).               |
 | `shape`       | [int]   | **REQUIRED.** The shape of the parameter as an array of integers.      |
 | `description` | string  | A human-readable description of the parameter that indicates what type of content is required. |
 
@@ -88,7 +88,7 @@ This object describes a single model output.
 | Field Name    | Type    | Description                                                                  |
 |---------------|---------|------------------------------------------------------------------------------|
 | `name`        | string  | **REQUIRED.** The name of the parameter.                                     |
-| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`)                |
+| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`).               |
 | `shape`       | [int]   | **REQUIRED.** The shape of the parameter as an array of integers.      |
 | `description` | string  | A human-readable description of the parameter that indicates what type of content it contains. |
 
