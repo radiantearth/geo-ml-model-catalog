@@ -1,3 +1,3 @@
-# Training Data Spec
+# Model Training Fragment
 
-**COMING SOON**
+**THIS SECTION IS STILL UNDER DEVELOPMENT**
