@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Radiant MLHub Slack Organization
+    url: https://mlhubearth.slack.com/app_redirect?channel=geo-ml-model-catalog
+    about: Slack channel for discussion of this spec
