@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug in the Python package
+about: Report a bug/inconsistency in the spec
 title: "[TITLE]"
 labels: bug
 assignees: duckontheweb
