@@ -14,8 +14,8 @@ This document describes the structure and content of a top-level Model Metadata 
 | `authors`            | \[[Author]\]       | **REQUIRED.** List of names and contact information for the model author(s).                 |
 | `citation`           | [Citation]         | Citation information related to the model.                                          |
 | `training`           | [Training Info]    | **REQUIRED.** A description of the data and environment used to train the model.    |
-| `inputs`             | \[[Model Input]\]  | A list of [Model Input] objects describing the names and types of model inputs.  |
-| `outputs`            | \[[Model Output]\] | A list of [Model Output] objects describing the names and types of model outputs. |
+| `inputs`             | \[[Model Input]\]  | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.  |
+| `outputs`            | \[[Model Output]\] | **REQUIRED.** A list of [Model Output] objects describing the names and types of model outputs. |
 | `runtimes`           | \[[Runtime]\]      | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences. |
 | `usage_recommendations` | [Usage Recommendations] | A description of the recommended conditions under which the model can be used. |
 
