@@ -49,7 +49,7 @@ This object describes an author involved in creating the model.
 |-----------------|-----------|------------------------------------------------------------------------|
 | `name`          | string    | **REQUIRED.** The full name of the author.                             |
 | `organization`  | string    | The name of the organization to which this author is affiliated.       |
-| `email`         | string    | A contact email for this author. STRONGLY RECOMMENDED for all authors. | 
+| `email`         | string    | **REQUIRED.** A contact email for this author. STRONGLY RECOMMENDED for all authors. | 
 
 ### Citation
 
