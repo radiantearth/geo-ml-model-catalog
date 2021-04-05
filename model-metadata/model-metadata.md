@@ -55,7 +55,7 @@ This object describes an author involved in creating the model.
 
 This object indicates from which publication the model originates and how the model itself should be cited or referenced. The object 
 mirrors the [STAC Scientific Citation Extension] (without the `sci:` field name prefix); all field descriptions are adapted from 
-that definition.
+that definition. *As per the Scientific Citation Extension spec, at least one field is required.*
 
 | Field Name     | Type                     | Description                                                               |
 |----------------|--------------------------|---------------------------------------------------------------------------|
