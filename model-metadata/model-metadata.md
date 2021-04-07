@@ -13,7 +13,7 @@ This document describes the structure and content of a top-level Model Metadata 
 | `license`            | string             | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
 | `authors`            | \[[Author]\]       | **REQUIRED.** List of names and contact information for the model author(s).                 |
 | `citation`           | [Citation]         | Citation information related to the model.                                          |
-| `training`           | [Training Info]    | **REQUIRED.** A description of the data and environment used to train the model.    |
+| `training`           | [Model Training]   | **REQUIRED.** A description of the data and environment used to train the model.    |
 | `inputs`             | \[[Model Input]\]  | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.  |
 | `outputs`            | \[[Model Output]\] | **REQUIRED.** A list of [Model Output] objects describing the names and types of model outputs. |
 | `runtimes`           | \[[Runtime]\]      | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences. |
@@ -99,7 +99,7 @@ This object describes a single model output.
 [License identifier]: https://spdx.org/licenses/
 [STAC Scientific Citation Extension]: https://github.com/radiantearth/stac-spec/tree/v1.0.0-rc.1/extensions/scientific
 [Runtime]: ../fragments/runtime
-[Training Info]: ../fragments/training
+[Model Training]: ../fragments/training
 [Algorithm Type]: #algorithm-type
 [Model Type]: #model-type
 [Author]: #author
