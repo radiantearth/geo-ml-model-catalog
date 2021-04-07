@@ -17,6 +17,12 @@ ML models and answer the following questions:
 * Is this model applicable to the geographic region I am interested in?
 * How well does this model perform under the kinds of conditions under which I will be using it?
 
+## Getting Started
+
+The best place to start is with the [Model Metadata](./model-metadata) spec. This describes the top-level metadata 
+document for a geospatial ML model. The Model Metadata spec describes the fields that may be present in the top-level 
+metadata document with links more detailed descriptions and definitions of more complex fields.
+
 ## Relation to STAC
 
 The [SpatioTemporal Asset Catalog (STAC) spec](https://github.com/radiantearth/stac-spec) is a mature and well-defined 
@@ -40,4 +46,4 @@ is not currently versioned, but we plan to begin versioning once we have a basic
 
 ## Contributing
 
-**COMING SOON**
+See the [Contributing guidelines](./CONTRIBUTING.md) for more information on how you can contribute to the spec.
