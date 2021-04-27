@@ -38,8 +38,6 @@ following values, but other values are allowed. Note that not all Model Type val
 * `"Image Classification"`
 * `"Segmentation"`
 * `"Regression"`
-* `"Clustering"`
-* `"Dimensionality Reduction"`
 
 ### Author
 
