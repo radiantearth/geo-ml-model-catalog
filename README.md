@@ -28,9 +28,9 @@ metadata document with links more detailed descriptions and definitions of more 
 The [SpatioTemporal Asset Catalog (STAC) spec](https://github.com/radiantearth/stac-spec) is a mature and well-defined 
 standard for cataloging geospatial assets. STAC has mature specifications for describing remotely sensed data, as well 
 as labeled data related to machine learning applications. The 
-[Electro-Optical](https://github.com/radiantearth/stac-spec/tree/master/extensions/eo), 
-[Projection](https://github.com/radiantearth/stac-spec/tree/master/extensions/projection), 
-[View](https://github.com/radiantearth/stac-spec/tree/master/extensions/view), and
+[Electro-Optical](https://github.com/stac-extensions/eo), 
+[Projection](https://github.com/stac-extensions/projection), 
+[View](https://github.com/stac-extensions/view), and
 [SAR](https://github.com/stac-extensions/sar) extensions, among others, provide a thorough description of remotely 
 sensed data from a variety of sources. Combined with the [Label](https://github.com/stac-extensions/label) extension, 
 these provide a thorough description of the data required for training an ML model using remotely sensed imagery. 
