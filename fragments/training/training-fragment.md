@@ -13,7 +13,9 @@ This document describes the structure and content of a Model Training object.
 This field is intended to capture the approximate date and time at which the model was trained in order to give 
 other developers a sense of the currency of the model. The model publisher is free to choose the exact event that 
 this timestamp represents (e.g. start of model training, completion of model training, etc.). Publishers may also 
-choose to use `00` for all time values if they wish to only represent a date (e.g. `2020-02-01T00:00:00Z`).
+choose to use `00` for all time values if they wish to only represent a date (e.g.
+`2020-02-01T00:00:00Z`). This format keeps the spec in line the datetime format requirements from
+the STAC spec.
 
 #### data
 
