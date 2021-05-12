@@ -43,8 +43,8 @@ The STAC [Label Extension] is intended to support the use of labeled AOIs with m
 the use of both raster labels and vector labels. The extension supports labels for the following machine learning model 
 types:
 
-* Tile classification
-* Tile regression
+* Classification
+* Regression
 * Object detection
 * Segmentation
 

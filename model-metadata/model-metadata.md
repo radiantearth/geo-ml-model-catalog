@@ -35,7 +35,7 @@ This string provides a more specific description of the type of model. It is STR
 following values, but other values are allowed. Note that not all Model Type values are valid for a given [Algorithm Type].
 
 * `"Object Detection"`
-* `"Image Classification"`
+* `"Classification"`
 * `"Segmentation"`
 * `"Regression"`
 
