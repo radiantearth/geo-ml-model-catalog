@@ -6,7 +6,7 @@ This document describes the structure and content of a Model Training object.
 |---------------------|---------------------|-----------------------------------------------------------------------|
 | `created_at`        | string              | **Required.** Approximate date and time at which the model was trained. It is formatted according to [RFC 3339, section 5.6].  |
 | `environment`       | [Environment]       | **Required.** Description of the environment used to train the model. |
-| `data`              | [string]            | **Required.** A list of URLs, each of which points to a [STAC Collection] representing source imagery used to train the model. |
+| `data`              | [string]            | **Required.** A list of URLs, each of which points to a [STAC Collection] representing input data used to train the model. |
 
 #### created_at
 
@@ -22,19 +22,19 @@ the STAC spec.
 A list of URLs, each of which points to a [STAC Collection] representing input data used to train
 the model. The Collection must implement the [ML AOI Extension], which describes how individual
 Items are split into `train`, `test`, and `validation` sets. As per the ML AOI Extension, Items 
-in the Collection will then link to Items describing either source imagery or labels (for 
+in the Collection will then link to Items describing the input data itself, as well as labels (for 
 supervised learning models). 
 
-##### Source Imagery Data
+##### Input Data
 
-The Collection referred to in the `data` field will in turn reference Items in a source imagery
+Items from the Collection linked to in the `data` field will in turn reference Items in an input data
 Collection. This Collection should implement any [STAC Extensions] required to thoroughly describe 
 the source data. For instance, a collection of optical satellite imagery should probably implement 
 the [Projection], [View Geometry], and [Electro-Optical] extensions.
 
 ##### Label Data
 
-For supervised learning models, the Collection referred to in the `data` field will in turn
+For supervised learning models, Items from the Collection linked to in the `data` field will also
 reference Items in a label Collection. Items in this label Collection must implement the [Label 
 Extension] and should also implement any other [STAC Extensions] that the model publisher 
 believes are necessary to thoroughly describe the dataset.
