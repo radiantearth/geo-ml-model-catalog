@@ -92,10 +92,6 @@ This object describes a single model output.
 | `shape`       | [int]   | **REQUIRED.** The shape of the parameter as an array of integers.      |
 | `description` | string  | A human-readable description of the parameter that indicates what type of content it contains. |
 
-### Usage Recommendations
-
-**COMING SOON**
-
 [License identifier]: https://spdx.org/licenses/
 [STAC Scientific Citation Extension]: https://github.com/radiantearth/stac-spec/tree/v1.0.0-rc.1/extensions/scientific
 [Runtime]: ../fragments/runtime
@@ -106,5 +102,5 @@ This object describes a single model output.
 [Citation]: #citation
 [Model Input]: #model-input
 [Model Output]: #model-output
-[Usage Recommendations]: #usage-recommendations
+[Usage Recommendations]: ../fragments/usage
 [Publication Object]: #publication-object
