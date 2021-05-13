@@ -11,7 +11,7 @@ This document describes the structure and content of a top-level Model Metadata 
 | `model_type`         | [Model Type]\|string | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed. |
 | `model_architecture` | string             | Identifies the model architecture used (e.g. RCNN, U-Net, etc.).                    |
 | `license`            | string             | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
-| `authors`            | \[[Author]\]       | **REQUIRED.** List of names and contact information for the model author(s).                 |
+| `contacts`           | \[[Contacts]\]     | **REQUIRED.** List of names and contact information for question and issues related to the model. |
 | `citation`           | [Citation]         | Citation information related to the model.                                          |
 | `training`           | [Model Training]   | **REQUIRED.** A description of the data and environment used to train the model.    |
 | `inputs`             | \[[Model Input]\]  | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.  |
@@ -41,15 +41,16 @@ Note that not all Model Type values are valid for a given [Algorithm Type].
 * `"Clustering"`
 * `"Dimensionality Reduction"`
 
-### Author
+### Contacts
 
-This object describes an author involved in creating the model.
+This object describes contact information for individuals associated with the model. These contacts
+may be different than the model authors listed in [Citation] section.
 
 | Field Name      | Type      | Description                                                            |
 |-----------------|-----------|------------------------------------------------------------------------|
-| `name`          | string    | **REQUIRED.** The full name of the author.                             |
-| `organization`  | string    | The name of the organization to which this author is affiliated.       |
-| `email`         | string    | **REQUIRED.** A contact email for this author. STRONGLY RECOMMENDED for all authors. | 
+| `name`          | string    | **REQUIRED.** The full name of the contact.                            |
+| `organization`  | string    | The name of the organization to which this contact is affiliated.      |
+| `email`         | string    | **REQUIRED.** The email for this contact.                              | 
 
 ### Citation
 
