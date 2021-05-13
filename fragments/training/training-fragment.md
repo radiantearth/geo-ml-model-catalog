@@ -20,10 +20,12 @@ the STAC spec.
 #### data
 
 A list of URLs, each of which points to a [STAC Collection] representing input data used to train
-the model. The Collection must implement the [ML AOI Extension], which describes how individual
-Items are split into `train`, `test`, and `validation` sets. As per the ML AOI Extension, Items 
-in the Collection will then link to Items describing the input data itself, as well as labels (for 
-supervised learning models). 
+the model. The link may reference a hosted static Collection or a Collection that is part of a
+[STAC API] implementation. If the Collection is part of a STAC API implementation, then the
+`/collections/{collection_id}` endpoint should be used. Collections must implement the [ML AOI
+Extension], which describes how individual Items are split into `train`, `test`, and `validation`
+sets. As per the ML AOI Extension, Items in the Collection will then link to Items describing the 
+input data itself, as well as labels (for supervised learning models). 
 
 ##### Input Data
 
@@ -66,3 +68,4 @@ discussion.
 [Input Datasets]: #input-datasets
 [STAC Spec site]: https://stacspec.org/
 [ML AOI Extension]: https://github.com/azavea/stac-ml-aoi-extension/tree/master/ml-aoi
+[STAC API]: https://github.com/radiantearth/stac-api-spec
