@@ -52,14 +52,17 @@ This object describes an author involved in creating the model.
 ### Citation
 
 This object indicates from which publication the model originates and how the model itself should be cited or 
-referenced. The object mirrors the [STAC Scientific Citation Extension] (without the `sci:` field name prefix); 
-all field descriptions are adapted from that definition. *As per the Scientific Citation Extension spec, at least 
-one field is required.*
+referenced. The object follows the [STAC Scientific Citation Extension], with 2 notable changes: (
+    * There is no `sci:` prefix on the field names
+    * If `doi` is present, then `citation` is also required
+
+All field descriptions are adapted from the corresponding [STAC Scientific Citation Extension]
+definitions. *As per the Scientific Citation Extension spec, at least one field is required.*
 
 | Field Name     | Type                     | Description                                                               |
 |----------------|--------------------------|---------------------------------------------------------------------------|
 | `doi`          | string                   | The DOI of the data, e.g. `10.1000/xyz123`. This MUST NOT be a DOIs link. |
-| `citation`     | string                   | The recommended human-readable reference (citation) to be used by publications citing the model. No specific citation style is suggested, but the citation should contain all information required to find the publication distinctively. |
+| `citation`     | string                   | The recommended human-readable reference (citation) to be used by publications citing the model. No specific citation style is suggested, but the citation should contain all information required to find the publication distinctively. **Required if `doi` is present.** |
 | `publications` | \[[Publication Object]\] | List of relevant publications referencing and describing the data.        |
 
 #### Publication Object
