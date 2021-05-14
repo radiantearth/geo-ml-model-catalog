@@ -7,7 +7,7 @@ This document describes the structure and content of a top-level Model Metadata 
 | Field Name           | Type               | Description                                                                         |
 |----------------------|--------------------|-------------------------------------------------------------------------------------|
 | `model_id`           | string             | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider. |
-| `algorithm_type`     | [Algorithm Type]\|string | **REQUIRED.** A string identifying the high-level algorithm type that the model employes. STRONGLY RECOMMENDED to use on the standard [Algorithm Type] values, but other values are allowed. |
+| `algorithm_type`     | [Algorithm Type]\|string | **REQUIRED.** A string identifying the high-level algorithm type that the model employs. STRONGLY RECOMMENDED to use on the standard [Algorithm Type] values, but other values are allowed. |
 | `model_type`         | [Model Type]\|string | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed. |
 | `model_architecture` | string             | Identifies the model architecture used (e.g. RCNN, U-Net, etc.).                    |
 | `license`            | string             | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
@@ -21,8 +21,8 @@ This document describes the structure and content of a top-level Model Metadata 
 
 ### Algorithm Type
 
-This string describes the general type of machine learning algorithm employed by the model. It is STRONGLY RECOMMENDED that you use one of the following values, but 
-other values are allowed.
+This string describes the general type of machine learning algorithm employed by the model. It is STRONGLY RECOMMENDED 
+that you use one of the following values, but other values are allowed.
 
 * `"Supervised"`
 * `"Unsupervised"`
@@ -31,15 +31,13 @@ other values are allowed.
 
 ### Model Type
 
-This string provides a more specific description of the type of model. It is STRONGLY RECOMMENDED that you use one of the following values, but other values are allowed.
-Note that not all Model Type values are valid for a given [Algorithm Type].
+This string provides a more specific description of the type of model. It is STRONGLY RECOMMENDED that you use one of the 
+following values, but other values are allowed. Note that not all Model Type values are valid for a given [Algorithm Type].
 
 * `"Object Detection"`
-* `"Image Classification"`
+* `"Classification"`
 * `"Segmentation"`
 * `"Regression"`
-* `"Clustering"`
-* `"Dimensionality Reduction"`
 
 ### Author
 
@@ -53,9 +51,10 @@ This object describes an author involved in creating the model.
 
 ### Citation
 
-This object indicates from which publication the model originates and how the model itself should be cited or referenced. The object 
-mirrors the [STAC Scientific Citation Extension] (without the `sci:` field name prefix); all field descriptions are adapted from 
-that definition. *As per the Scientific Citation Extension spec, at least one field is required.*
+This object indicates from which publication the model originates and how the model itself should be cited or 
+referenced. The object mirrors the [STAC Scientific Citation Extension] (without the `sci:` field name prefix); 
+all field descriptions are adapted from that definition. *As per the Scientific Citation Extension spec, at least 
+one field is required.*
 
 | Field Name     | Type                     | Description                                                               |
 |----------------|--------------------------|---------------------------------------------------------------------------|
