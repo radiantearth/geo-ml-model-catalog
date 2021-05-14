@@ -67,5 +67,5 @@ discussion.
 [Label Extension]: https://github.com/stac-extensions/label
 [Input Datasets]: #input-datasets
 [STAC Spec site]: https://stacspec.org/
-[ML AOI Extension]: https://github.com/azavea/stac-ml-aoi-extension/tree/master/ml-aoi
+[ML AOI Extension]: https://github.com/stac-extensions/ml-aoi
 [STAC API]: https://github.com/radiantearth/stac-api-spec
