@@ -4,35 +4,46 @@ This document describes the structure and content of a top-level Model Metadata 
 
 ## Model Metadata Fields
 
-| Field Name           | Type               | Description                                                                         |
-|----------------------|--------------------|-------------------------------------------------------------------------------------|
-| `model_id`           | string             | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider. |
-| `algorithm_type`     | [Algorithm Type]\|string | **REQUIRED.** A string identifying the high-level algorithm type that the model employs. STRONGLY RECOMMENDED to use on the standard [Algorithm Type] values, but other values are allowed. |
-| `model_type`         | [Model Type]\|string | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed. |
-| `model_architecture` | string             | Identifies the model architecture used (e.g. RCNN, U-Net, etc.).                    |
-| `license`            | string             | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
-| `authors`            | \[[Author]\]       | **REQUIRED.** List of names and contact information for the model author(s).                 |
-| `citation`           | [Citation]         | Citation information related to the model.                                          |
-| `training`           | [Model Training]   | **REQUIRED.** A description of the data and environment used to train the model.    |
-| `inputs`             | \[[Model Input]\]  | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.  |
-| `outputs`            | \[[Model Output]\] | **REQUIRED.** A list of [Model Output] objects describing the names and types of model outputs. |
-| `runtimes`           | \[[Runtime]\]      | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences. |
-| `usage_recommendations` | [Usage Recommendations] | A description of the recommended conditions under which the model can be used. |
+| Field Name              | Type                     | Description                                                                                                                                                                                 |
+| ----------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model_id`              | string                   | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider.                                                                                         |
+| `model_type`            | [Model Type]             | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed.                                           |
+| `model_architecture`    | string                   | Identifies the model architecture used (e.g. RCNN, U-Net, etc.).                                                                                                                            |
+| `license`               | string                   | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases.                                       |
+| `authors`               | \[[Author]\]             | **REQUIRED.** List of names and contact information for the model author(s).                                                                                                                |
+| `citation`              | [Citation]               | Citation information related to the model.                                                                                                                                                  |
+| `training`              | [Model Training]         | **REQUIRED.** A description of the data and environment used to train the model.                                                                                                            |
+| `inputs`                | \[[Model Input]\]        | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.                                                                                               |
+| `outputs`               | \[[Model Output]\]       | **REQUIRED.** A list of [Model Output] objects describing the names and types of model outputs.                                                                                             |
+| `runtimes`              | \[[Runtime]\]            | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences.                                                           |
+| `usage_recommendations` | [Usage Recommendations]  | A description of the recommended conditions under which the model can be used.                                                                                                              |
 
-### Algorithm Type
+### Model Type
 
-This string describes the general type of machine learning algorithm employed by the model. It is STRONGLY RECOMMENDED 
-that you use one of the following values, but other values are allowed.
+This object defines the type of model based on the learning approach and type of prediction. It also allows the
+publisher to provide a free-text description of the model type to cover any nuances that are not
+adequately described by the other fields.
+
+| Field Name          | Type   | Description                                                                                                                                                                      |
+| ------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `learning_approach` | string | The learning approach used to train the model. It is STRONGLY RECOMMENDED that you use one of the values in the [Learning Approach] section below, but other values are allowed. |
+| `prediction_type`   | string | The type of prediction that the model makes. It is STRONGLY RECOMMENDED that you use one of the values in the [Prediction Type] section below, but other values are allowed.     |
+| `description`       | string | A free text description of the model type.                                                                                                                                       |
+
+#### Learning Approach
+
+Describes the learning approach used to train the model. It is STRONGLY RECOMMENDED that you use one of the 
+following values, but other values are allowed.
 
 * `"Supervised"`
 * `"Unsupervised"`
 * `"Semi-Supervised"`
 * `"Reinforcement Learning"`
 
-### Model Type
-
-This string provides a more specific description of the type of model. It is STRONGLY RECOMMENDED that you use one of the 
-following values, but other values are allowed. Note that not all Model Type values are valid for a given [Algorithm Type].
+#### Prediction Type
+Describes the type of predictions made by the model. It is STRONGLY RECOMMENDED that you use one of the 
+following values, but other values are allowed. Note that not all Prediction Type values are valid
+for a given [Learning Approach].
 
 * `"Object Detection"`
 * `"Classification"`
@@ -43,11 +54,11 @@ following values, but other values are allowed. Note that not all Model Type val
 
 This object describes an author involved in creating the model.
 
-| Field Name      | Type      | Description                                                            |
-|-----------------|-----------|------------------------------------------------------------------------|
-| `name`          | string    | **REQUIRED.** The full name of the author.                             |
-| `organization`  | string    | The name of the organization to which this author is affiliated.       |
-| `email`         | string    | **REQUIRED.** A contact email for this author. STRONGLY RECOMMENDED for all authors. | 
+| Field Name     | Type   | Description                                                                          |
+| -------------- | ------ | ------------------------------------------------------------------------------------ |
+| `name`         | string | **REQUIRED.** The full name of the author.                                           |
+| `organization` | string | The name of the organization to which this author is affiliated.                     |
+| `email`        | string | **REQUIRED.** A contact email for this author. STRONGLY RECOMMENDED for all authors. |
 
 ### Citation
 
@@ -59,40 +70,40 @@ referenced. The object follows the [STAC Scientific Citation Extension], with 2 
 All field descriptions are adapted from the corresponding [STAC Scientific Citation Extension]
 definitions. *As per the Scientific Citation Extension spec, at least one field is required.*
 
-| Field Name     | Type                     | Description                                                               |
-|----------------|--------------------------|---------------------------------------------------------------------------|
-| `doi`          | string                   | The DOI of the data, e.g. `10.1000/xyz123`. This MUST NOT be a DOIs link. |
+| Field Name     | Type                     | Description                                                                                                                                                                                                                                                                 |
+| -------------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `doi`          | string                   | The DOI of the data, e.g. `10.1000/xyz123`. This MUST NOT be a DOIs link.                                                                                                                                                                                                   |
 | `citation`     | string                   | The recommended human-readable reference (citation) to be used by publications citing the model. No specific citation style is suggested, but the citation should contain all information required to find the publication distinctively. **Required if `doi` is present.** |
-| `publications` | \[[Publication Object]\] | List of relevant publications referencing and describing the data.        |
+| `publications` | \[[Publication Object]\] | List of relevant publications referencing and describing the data.                                                                                                                                                                                                          |
 
 #### Publication Object
 
-| Field Name  | Type    | Description                                                                  |
-|-------------|---------|------------------------------------------------------------------------------|
-| `doi`       | string  | See the description of `doi` field in the [Citation] description above.      |
-| `citation`  | string  | See the description of `citation` field in the [Citation] description above. |
+| Field Name | Type   | Description                                                                  |
+| ---------- | ------ | ---------------------------------------------------------------------------- |
+| `doi`      | string | See the description of `doi` field in the [Citation] description above.      |
+| `citation` | string | See the description of `citation` field in the [Citation] description above. |
 
 ### Model Input
 
 This object describes a single model input parameter.
 
-| Field Name    | Type    | Description                                                                  |
-|---------------|---------|------------------------------------------------------------------------------|
-| `name`        | string  | **REQUIRED.** The name of the parameter.                                     |
-| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`).               |
-| `shape`       | [int]   | **REQUIRED.** The shape of the parameter as an array of integers.      |
-| `description` | string  | A human-readable description of the parameter that indicates what type of content is required. |
+| Field Name    | Type   | Description                                                                                    |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------- |
+| `name`        | string | **REQUIRED.** The name of the parameter.                                                       |
+| `type`        | string | **REQUIRED.** The data type of the parameter (e.g. `float32`).                                 |
+| `shape`       | [int]  | **REQUIRED.** The shape of the parameter as an array of integers.                              |
+| `description` | string | A human-readable description of the parameter that indicates what type of content is required. |
 
 ### Model Output
 
 This object describes a single model output.
 
-| Field Name    | Type    | Description                                                                  |
-|---------------|---------|------------------------------------------------------------------------------|
-| `name`        | string  | **REQUIRED.** The name of the parameter.                                     |
-| `type`        | string  | **REQUIRED.** The data type of the parameter (e.g. `float32`).               |
-| `shape`       | [int]   | **REQUIRED.** The shape of the parameter as an array of integers.      |
-| `description` | string  | A human-readable description of the parameter that indicates what type of content it contains. |
+| Field Name    | Type   | Description                                                                                    |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------- |
+| `name`        | string | **REQUIRED.** The name of the parameter.                                                       |
+| `type`        | string | **REQUIRED.** The data type of the parameter (e.g. `float32`).                                 |
+| `shape`       | [int]  | **REQUIRED.** The shape of the parameter as an array of integers.                              |
+| `description` | string | A human-readable description of the parameter that indicates what type of content it contains. |
 
 ### Usage Recommendations
 
@@ -102,7 +113,8 @@ This object describes a single model output.
 [STAC Scientific Citation Extension]: https://github.com/radiantearth/stac-spec/tree/v1.0.0-rc.1/extensions/scientific
 [Runtime]: ../fragments/runtime
 [Model Training]: ../fragments/training
-[Algorithm Type]: #algorithm-type
+[Learning Approach]: #learning-approach
+[Prediction Type]: #prediction-type
 [Model Type]: #model-type
 [Author]: #author
 [Citation]: #citation
