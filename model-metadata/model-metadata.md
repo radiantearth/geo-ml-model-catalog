@@ -9,7 +9,7 @@ This document describes the structure and content of a top-level Model Metadata 
 | `model_id`              | string                  | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider.                                                   |
 | `model_type`            | [Model Type]            | **REQUIRED.** Describes the learning approach, type of prediction, and model architecture.                                                            |
 | `license`               | string                  | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
-| `authors`               | \[[Author]\]            | **REQUIRED.** List of names and contact information for the model author(s).                                                                          |
+| `contacts`              | \[[Contacts]\]          | **REQUIRED.** List of names and contact information for question and issues related to the model.                                                     |
 | `citation`              | [Citation]              | Citation information related to the model.                                                                                                            |
 | `training`              | [Model Training]        | **REQUIRED.** A description of the data and environment used to train the model.                                                                      |
 | `inputs`                | \[[Model Input]\]       | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.                                                         |
@@ -50,15 +50,16 @@ for a given [Learning Approach].
 * `"Segmentation"`
 * `"Regression"`
 
-### Author
+### Contacts
 
-This object describes an author involved in creating the model.
+This object describes contact information for individuals associated with the model. These contacts
+may be different than the model authors listed in [Citation] section.
 
-| Field Name     | Type   | Description                                                                          |
-| -------------- | ------ | ------------------------------------------------------------------------------------ |
-| `name`         | string | **REQUIRED.** The full name of the author.                                           |
-| `organization` | string | The name of the organization to which this author is affiliated.                     |
-| `email`        | string | **REQUIRED.** A contact email for this author. STRONGLY RECOMMENDED for all authors. |
+| Field Name     | Type   | Description                                                       |
+| -------------- | ------ | ----------------------------------------------------------------- |
+| `name`         | string | **REQUIRED.** The full name of the contact.                       |
+| `organization` | string | The name of the organization to which this contact is affiliated. |
+| `email`        | string | **REQUIRED.** The email for this contact.                         |
 
 ### Citation
 
@@ -116,7 +117,7 @@ This object describes a single model output.
 [Learning Approach]: #learning-approach
 [Prediction Type]: #prediction-type
 [Model Type]: #model-type
-[Author]: #author
+[Contacts]: #contacts
 [Citation]: #citation
 [Model Input]: #model-input
 [Model Output]: #model-output
