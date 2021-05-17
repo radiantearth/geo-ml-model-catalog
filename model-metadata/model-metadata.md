@@ -4,19 +4,18 @@ This document describes the structure and content of a top-level Model Metadata 
 
 ## Model Metadata Fields
 
-| Field Name              | Type                     | Description                                                                                                                                                                                 |
-| ----------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `model_id`              | string                   | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider.                                                                                         |
-| `model_type`            | [Model Type]             | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed.                                           |
-| `model_architecture`    | string                   | Identifies the model architecture used (e.g. RCNN, U-Net, etc.).                                                                                                                            |
-| `license`               | string                   | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases.                                       |
-| `authors`               | \[[Author]\]             | **REQUIRED.** List of names and contact information for the model author(s).                                                                                                                |
-| `citation`              | [Citation]               | Citation information related to the model.                                                                                                                                                  |
-| `training`              | [Model Training]         | **REQUIRED.** A description of the data and environment used to train the model.                                                                                                            |
-| `inputs`                | \[[Model Input]\]        | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.                                                                                               |
-| `outputs`               | \[[Model Output]\]       | **REQUIRED.** A list of [Model Output] objects describing the names and types of model outputs.                                                                                             |
-| `runtimes`              | \[[Runtime]\]            | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences.                                                           |
-| `usage_recommendations` | [Usage Recommendations]  | A description of the recommended conditions under which the model can be used.                                                                                                              |
+| Field Name              | Type                    | Description                                                                                                                                           |
+| ----------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model_id`              | string                  | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider.                                                   |
+| `model_type`            | [Model Type]            | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed.     |
+| `license`               | string                  | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
+| `authors`               | \[[Author]\]            | **REQUIRED.** List of names and contact information for the model author(s).                                                                          |
+| `citation`              | [Citation]              | Citation information related to the model.                                                                                                            |
+| `training`              | [Model Training]        | **REQUIRED.** A description of the data and environment used to train the model.                                                                      |
+| `inputs`                | \[[Model Input]\]       | **REQUIRED.** A list of [Model Input] objects describing the names and types of model inputs.                                                         |
+| `outputs`               | \[[Model Output]\]      | **REQUIRED.** A list of [Model Output] objects describing the names and types of model outputs.                                                       |
+| `runtimes`              | \[[Runtime]\]           | A list of [Runtime] objects describing serialized or containerized versions of the model that can be used to generate inferences.                     |
+| `usage_recommendations` | [Usage Recommendations] | A description of the recommended conditions under which the model can be used.                                                                        |
 
 ### Model Type
 
@@ -24,11 +23,12 @@ This object defines the type of model based on the learning approach and type of
 publisher to provide a free-text description of the model type to cover any nuances that are not
 adequately described by the other fields.
 
-| Field Name          | Type   | Description                                                                                                                                                                      |
-| ------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `learning_approach` | string | The learning approach used to train the model. It is STRONGLY RECOMMENDED that you use one of the values in the [Learning Approach] section below, but other values are allowed. |
-| `prediction_type`   | string | The type of prediction that the model makes. It is STRONGLY RECOMMENDED that you use one of the values in the [Prediction Type] section below, but other values are allowed.     |
-| `description`       | string | A free text description of the model type.                                                                                                                                       |
+| Field Name          | Type   | Description                                                                                                                                                                                                 |
+| ------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `learning_approach` | string | **REQUIRED.** The learning approach used to train the model. It is STRONGLY RECOMMENDED that you use one of the values in the [Learning Approach] section below, but other values are allowed.              |
+| `prediction_type`   | string | **REQUIRED.** The type of prediction that the model makes. It is STRONGLY RECOMMENDED that you use one of the values in the [Prediction Type] section below, but other values are allowed.                  |
+| `architecture`      | string | **REQUIRED.** Identifies the architecture employed by the model (e.g. RCNN, U-Net, etc.). This may be any string identifier, but publishers are encouraged to use well-known identifiers whenever possible. |
+| `description`       | string | A free text description of the model type.                                                                                                                                                                  |
 
 #### Learning Approach
 
