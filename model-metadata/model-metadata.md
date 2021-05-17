@@ -7,7 +7,7 @@ This document describes the structure and content of a top-level Model Metadata 
 | Field Name              | Type                    | Description                                                                                                                                           |
 | ----------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `model_id`              | string                  | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider.                                                   |
-| `model_type`            | [Model Type]            | **REQUIRED.** Identifier for the type of model. STRONGLY RECOMMENDED to use on of the standard [Model Type] values, but other values are allowed.     |
+| `model_type`            | [Model Type]            | **REQUIRED.** Describes the learning approach, type of prediction, and model architecture.                                                            |
 | `license`               | string                  | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
 | `authors`               | \[[Author]\]            | **REQUIRED.** List of names and contact information for the model author(s).                                                                          |
 | `citation`              | [Citation]              | Citation information related to the model.                                                                                                            |
