@@ -6,6 +6,7 @@ This document describes the structure and content of a top-level Model Metadata 
 
 | Field Name              | Type                    | Description                                                                                                                                           |
 | ----------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `version`               | string                  | The GMLMC spec version that this metadata document implements.                                                                                        |
 | `model_id`              | string                  | **REQUIRED.** A unique string identifier for the model. This ID must be unique across the provider.                                                   |
 | `model_type`            | [Model Type]            | **REQUIRED.** Describes the learning approach, type of prediction, and model architecture.                                                            |
 | `license`               | string                  | **REQUIRED.** The model's license(s). Either a SPDX [License identifier], `various` if multiple licenses apply, or `proprietary` for all other cases. |
