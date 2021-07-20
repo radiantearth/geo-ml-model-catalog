@@ -13,7 +13,7 @@ Runtime Fields]). The structure of the `properties` field will depend on the spe
 | Field Name          | Type                | Description                                                           |
 |---------------------|---------------------|-----------------------------------------------------------------------|
 | `type`              | string              | The type of model runtime. Either `"docker"` or `"onnx"`.
-| `properties`        | \[ONNX Fields\]\|\[Docker Fields\] | Describes the properties of the runtime environment (depends on the `"type"`). |
+| `properties`        | [ONNX Fields]\|[Docker Fields] | Describes the properties of the runtime environment (depends on the `"type"`). |
 
 ## Serialized Models
 
@@ -51,3 +51,5 @@ The spec currently supports model containerized using [Docker].
 [Environment]: ../environment/environment-fragment.md
 [Model Runtime Fields]: #model-runtime-fields
 [Host Requirements]: #host-requirements
+[ONNX Fields]: #onnx-fields
+[Docker Fields]: #docker-fields
