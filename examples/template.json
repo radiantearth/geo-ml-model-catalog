@@ -1,0 +1,85 @@
+{
+    "version": "0.1.0",
+    "model_id": "template",
+    "model_type": {
+        "learning_approach": "Supervised",
+        "prediction_type": "Classification",
+        "architecture": "RCNN",
+        "description": "Description here"
+    },
+    "license": "MIT",
+    "contacts": [
+        {
+            "name": "Some Person",
+            "organization": "My Organization",
+            "email": "some.person@myorganization.com"
+        }
+    ],
+    "citation": {
+        "doi": "10.1000/xyz123",
+        "citation": "RECOMMENDED CITATION HERE",
+        "publications": [
+            {
+                "doi": "10.1111/xyz123",
+                "citation": "PUBLICATION CITATION HERE"
+            }
+        ]
+    },
+    "training": {
+        "created_at": "2020-04-12T23:20:50.52Z",
+        "environment": {
+            "processor": {
+                "number_of_cores": 8,
+                "processor_type": "GPU"
+            },
+            "operating_system": "Windows",
+            "programming_language": "Python",
+            "dependencies": "https://www.github.com/myorg/myrepo/blob/main/somefolder/requirements.txt"
+        },
+        "data": [
+            "https://api.radiant.earth/mlhub/v1/collections/ref_african_crops_kenya_01_source"
+        ]
+    },
+    "inputs": [
+        {
+            "name": "input_var_1",
+            "type": "float32",
+            "shape": [50, 256, 256],
+            "description": "Description of what the inputs should look like"
+        }
+    ],
+    "outputs": [
+        {
+            "name": "output_var_2",
+            "type": "float32",
+            "shape": [50, 1],
+            "description": "Description of what the outputs of the model are"
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "docker",
+            "properties": {
+                "format": "Docker",
+                "link": "myregistryhost:5000/organization/model_container:1.0.0",
+                "code_examples": [
+                    "https://www.github.com/myorganization/greatexamples"
+                ],
+                "host_requirements": "???"
+            }
+        }
+    ],
+    "usage_recommendations": {
+        "recommendations": [
+            {
+                "spatial": [
+                    [34.18, 0.47 ,34.37, 0.71]
+                ],
+                "temporal": [
+                    ["2018-04-12T00:00:00Z", "2020-03-12T00:00:00Z"]
+                ],
+                "description": "Description of usage recomendation"
+            }
+        ]
+    }
+}
