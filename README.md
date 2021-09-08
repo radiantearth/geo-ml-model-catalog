@@ -39,6 +39,11 @@ The Geospatial ML Model Catalog (GMLMC) specification takes advantage of the STA
 associated with a model, and we hope that discussions relating to the GMLMC spec will help guide development of those 
 standards as well.
 
+## Examples
+
+Example are currently a work in progress and we hope to have some soon. There is a [template
+file](./examples/template.json) that demonstrates the overall structure and types in the JSON document.
+
 ## Stability & Versioning
 
 This specification is a work in progress and should be considered unstable until further notice. The specification 
