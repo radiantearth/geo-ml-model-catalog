@@ -1,5 +1,9 @@
 # Geospatial ML Model Catalog \(GMLMC\) Specification
 
+| :exclamation:  DEPRECATED   |
+|:----------------------------|
+| Work on a geospatial model cataloging spec has been moved to the [STAC ML Model Extension](https://github.com/stac-extensions/ml-model). This repository has been archived and will no longer be actively maintained. |
+
 ## Purpose
 
 The number and variety of machine learning (ML) models that utilize geospatial data (e.g. satellite imagery, airborne 
